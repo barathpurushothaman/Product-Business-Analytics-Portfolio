@@ -39,19 +39,15 @@ The dataset contains anonymized information about:
 
 ---
 
-## Repository Structure
+## Repository Contents
 
-```text
-project-01/
-│
-├── README.md
-├── dataset/
-├── sql/
-├── excel/
-├── dashboard/
-├── assets/
-└── documentation/
-```
+| Folder | Purpose |
+|---------|----------|
+| documentation | Business and technical documentation |
+| sql | SQL scripts used for validation and analysis |
+| dashboard | Power BI dashboards |
+| dataset | Source datasets |
+| assets | Images, diagrams and dashboard screenshots |
 
 ---
 
@@ -59,18 +55,12 @@ project-01/
 
 - [x] Select dataset
 - [x] Create project structure
-- [ ] Understand dataset
-- [ ] Build data dictionary
-- [ ] Design entity relationship model
+- [x] Understand dataset
+- [x] Build data dictionary
+- [x] Design entity relationship model
 - [ ] Perform exploratory data analysis
 - [ ] Define business problem
-- [ ] Identify stakeholders
-- [ ] Frame business questions
-- [ ] Analyze data
-- [ ] Develop insights
-- [ ] Recommend business actions
-- [ ] Finalize documentation
-
+...
 ---
 
 > This project follows the standard project documentation framework established for this portfolio.
