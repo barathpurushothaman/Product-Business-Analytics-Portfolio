@@ -1,235 +1,129 @@
 # Product & Business Analytics Portfolio
 
+> *"Good analysis doesn't end with insights—it ends with better business decisions."*
+
 Welcome to my Product & Business Analytics Portfolio.
 
-I'm Barath, a Product Management and Business Analysis professional with experience in the Banking & Financial Services industry. This repository documents my journey of solving real business problems through structured analysis, product thinking, and data-driven decision making.
+I'm **Barath**, a Product Management and Business Analysis professional with experience in the Banking & Financial Services industry. This repository showcases end-to-end analytics projects that demonstrate how I approach business problems using structured analysis, product thinking, and data-driven decision-making.
 
-Rather than showcasing isolated SQL queries or dashboards, this portfolio demonstrates the complete analytical process—from understanding a business problem to delivering actionable recommendations that support better business decisions.
-
----
-
-## Why This Portfolio Exists
-
-I believe that effective analysis begins with understanding the business—not the data.
-
-Data, SQL, dashboards, and visualizations are valuable tools, but they are only meaningful when they help answer important business questions and support better decisions.
-
-I created this portfolio to practice and demonstrate that approach.
-
-Every project is an opportunity to understand a business problem, ask the right questions, analyze available data, communicate meaningful insights, and recommend actions that create value for stakeholders.
-
-As this portfolio grows, it will also reflect my own professional growth—showing not only the projects I complete, but the evolution of my analytical thinking, product mindset, and decision-making skills.
+Rather than presenting isolated SQL queries or dashboards, each project documents the complete analytical journey—from understanding the business problem to delivering actionable recommendations.
 
 ---
 
-## Portfolio Philosophy
+# About This Portfolio
 
-To me, analysis is not about producing reports or dashboards.
+The purpose of this portfolio is to demonstrate how business problems can be solved through a structured analytics process.
 
-It is about reducing uncertainty, enabling better decisions, and creating value for customers and businesses.
+Each project reflects the way analytical work is performed in professional environments by documenting every stage of the project lifecycle, including business understanding, technical implementation, analysis, visualization, and recommendations.
 
-Every project in this repository is guided by a simple belief:
-
-> Technology provides the tools.
->
-> Data provides the evidence.
->
-> Business context provides the meaning.
->
-> Decisions create the impact.
-
-That philosophy shapes how I approach every case study in this portfolio.
+The focus is not only on technical execution, but also on analytical reasoning, decision-making, and communication.
 
 ---
 
-# Guiding Principles
+# Technical Skills & Tools
 
-This portfolio is built around six core principles.
-
-### 1. Business First
-
-Every project begins with a real business problem—not a dataset.
-
-Understanding stakeholder needs always comes before selecting analytical techniques.
-
----
-
-### 2. Real-World Data
-
-Whenever possible, projects use publicly available real-world datasets to simulate authentic business scenarios.
-
----
-
-### 3. Evidence-Based Recommendations
-
-Every recommendation is supported by analysis.
-
-Where assumptions are required, they are clearly stated.
-
----
-
-### 4. Decision-Oriented Analytics
-
-Dashboards and reports are created to support decision-making rather than simply presenting data.
-
----
-
-### 5. Consistent Documentation
-
-Every project follows the same structured methodology to ensure clarity, consistency, and professionalism.
-
----
-
-### 6. Continuous Improvement
-
-This portfolio is a living body of work.
-
-Projects will be revisited and refined as I gain new skills, discover better approaches, and continue learning.
-
----
-
-## Scope of This Portfolio
-
-This portfolio emphasizes the complete analytical process rather than any single tool or technology.
-
-Each project combines business understanding, structured analysis, technical implementation, and clear communication to demonstrate how data can support better decision-making.
-
-SQL, dashboards, and visualizations are important parts of that journey, but they are presented as tools within a broader problem-solving framework.
-
----
-
-# Project Methodology
-
-Every project follows a consistent end-to-end analytical framework.
-
-```
-Business Problem
-        ↓
-Business Context
-        ↓
-Stakeholders
-        ↓
-Business Questions
-        ↓
-Dataset Understanding
-        ↓
-Data Preparation
-        ↓
-SQL Analysis
-        ↓
-Dashboard & Visualization
-        ↓
-Key Insights
-        ↓
-Business Recommendations
-        ↓
-Business Impact
-```
-
-This structure mirrors how analytical work is performed in professional product and business environments.
-
----
-
-# Technology Stack
-
-| Category | Tools |
-|-----------|-------|
+| Category | Technologies |
+|-----------|--------------|
 | Database | PostgreSQL |
 | Query Language | SQL |
 | Data Analysis | Microsoft Excel |
-| Visualization | Excel *(Power BI coming soon)* |
-| Product Tools | Jira, Confluence |
+| Data Visualization | Power BI |
 | Version Control | Git & GitHub |
+| Documentation | Markdown |
+| Product & Collaboration | Jira, Confluence |
 
-As the portfolio grows, additional tools and technologies will be incorporated where they provide meaningful business value.
+---
+
+# Featured Projects
+
+| Project | Description | Status | Current Phase |
+|----------|-------------|--------|---------------|
+| **[Project 01 – Olist E-Commerce Business Analysis](./projects/project-01/)** | End-to-end analysis of an e-commerce business using PostgreSQL, SQL, and Power BI. | 🚧 In Progress | Phase 02 – Database Design |
+
+More projects will be added as this portfolio grows.
 
 ---
 
 # Repository Structure
 
-```
-Product-Business-Analytics-Portfolio
+```text
+Product-Business-Analytics-Portfolio/
 │
-├── Projects
-│   ├── Project-01
-│   ├── Project-02
-│   ├── Project-03
+├── README.md
+│
+├── projects/
+│   ├── project-01/
+│   ├── project-02/
+│   ├── project-03/
 │   └── ...
 │
-├── Resources
-│
-├── Assets
-│
-└── README.md
+├── resources/
+├── assets/
+└── templates/
 ```
 
 ---
 
-# Portfolio Roadmap
+# How Projects Are Organized
 
-This portfolio will evolve through progressive milestones.
+Each project is organized into dedicated phases that mirror the lifecycle of a real-world analytics initiative.
 
-### Milestone 0 – Foundation ✅
+```text
+Project
+│
+├── Phase 01 – Project Planning
+├── Phase 02 – Database Design
+├── Phase 03 – Data Exploration
+├── Phase 04 – Business Analysis
+├── Phase 05 – Dashboard Development
+└── Phase 06 – Business Case Study
+```
 
-- GitHub Portfolio Setup
-- Professional Documentation
-- Portfolio Framework
-- Project Template
-
-### Milestone 1 – Product Analytics Fundamentals
-
-- Customer Funnel Analysis
-- Business KPI Reporting
-- Operational Performance Analysis
-
-### Milestone 2 – Intermediate Business Analytics
-
-- Customer Segmentation
-- Product Adoption
-- Revenue & Growth Analysis
-
-### Milestone 3 – Advanced Product Strategy
-
-- Feature Impact Analysis
-- Product Experimentation
-- Strategic Business Recommendations
+This structure allows visitors to follow the project from initial planning through to final business recommendations.
 
 ---
 
-# Projects
+# My Approach
 
-Projects will be added progressively as they are completed.
+Every project is guided by four principles:
 
-Each project includes:
+- **Business First** – Understand the business problem before selecting analytical techniques.
+- **Evidence-Based Analysis** – Use data to support findings and recommendations.
+- **Technology as an Enabler** – Use the right tools to answer business questions effectively.
+- **Decision-Oriented Thinking** – Focus on generating insights that help stakeholders make better decisions.
 
-- Executive Summary
-- Business Context
-- Business Problem
-- Stakeholders
-- Business Questions
-- Success Metrics (KPIs)
-- Dataset Overview
-- SQL Analysis
-- Dashboard
-- Key Insights
-- Business Recommendations
-- Limitations
-- Future Improvements
+---
+
+# Continuous Learning
+
+This repository is a living portfolio.
+
+Existing projects will continue to evolve as I discover better approaches, expand my technical skills, and gain broader professional experience. New projects will be added to explore different industries, datasets, and analytical challenges.
 
 ---
 
 # About Me
 
-I'm currently focused on building practical expertise in:
+My professional interests include:
 
-- Product Analytics
-- Business Analysis
 - Product Management
-- SQL
-- Data-Driven Decision Making
+- Business Analysis
+- Product Analytics
+- Business Operations
+- Data Analytics
+- Decision Science
 
-This repository reflects my commitment to continuous learning through practical, real-world problem solving.
+I enjoy solving business problems where data, technology, and product thinking come together to create measurable business value.
 
 ---
 
-> **"Good analysis doesn't end with insights—it ends with better business decisions."**
+## Let's Connect
+
+If you're interested in discussing analytics, product management, or business problem-solving, feel free to connect with me.
+
+- **LinkedIn:** *(https://www.linkedin.com/in/barathp276/)*
+- **GitHub:** *(https://github.com/barathpurushothaman)*
+
+---
+
+> **"Every dataset tells a story. My goal is to uncover that story and translate it into better business decisions."**
