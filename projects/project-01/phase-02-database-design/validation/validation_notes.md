@@ -34,6 +34,23 @@ The following checks were completed for each imported table:
 
 ---
 
+## Constraint Validation
+
+The following database constraints were successfully implemented and verified:
+
+### Primary Keys
+
+- `customers.customer_id`
+- `orders.order_id`
+
+### Foreign Keys
+
+- `orders.customer_id` → `customers.customer_id`
+
+These constraints enforce entity integrity and accurately model the one-to-many relationship between customers and orders.
+
+---
+
 ## Conclusion
 
 The imported datasets have been successfully validated and are ready for the next stage of database population and analysis.

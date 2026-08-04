@@ -26,6 +26,14 @@ Unless otherwise noted, SQL queries in this project use schema-qualified table n
 
 ---
 
+## Database Constraints
+
+The source CSV files do not contain database constraints such as primary keys or foreign keys. After importing the data into PostgreSQL, constraints are added incrementally to establish data integrity and accurately model the relationships between entities.
+
+This approach mirrors how database structures are often built in analytical environments, where data is first loaded and validated before structural constraints are applied.
+
+---
+
 ## Activities Performed
 
 - Created the PostgreSQL database for the project.
@@ -33,6 +41,8 @@ Unless otherwise noted, SQL queries in this project use schema-qualified table n
 - Validated imported tables to ensure successful data loading.
 - Verified record counts and table structure.
 - Established the foundation for future SQL analysis.
+- Defined primary key constraints for imported tables.
+- Established the foreign key relationship between customers and orders.
 
 ---
 
@@ -40,6 +50,7 @@ Unless otherwise noted, SQL queries in this project use schema-qualified table n
 
 - PostgreSQL database created
 - Imported datasets
+- Database constraints
 - SQL validation scripts
 - Validation documentation
 
@@ -70,18 +81,19 @@ validation/validation_notes.md
 
 ## Current Progress
 
-| Table | Status |
-|--------|--------|
-| Customers | ✅ Imported & Validated |
-| Orders | ✅ Imported & Validated |
-| Order Items | ⏳ Pending |
-| Payments | ⏳ Pending |
-| Reviews | ⏳ Pending |
-| Products | ⏳ Pending |
-| Sellers | ⏳ Pending |
-| Geolocation | ⏳ Pending |
-| Category Translation | ⏳ Pending |
+## Database Build Progress
 
+| Table | Import | Validation | Constraints |
+|--------|:------:|:----------:|:-----------:|
+| Customers | ✅ | ✅ | ✅ |
+| Orders | ✅ | ✅ | ✅ |
+| Order Items | ⏳ | ⏳ | ⏳ |
+| Payments | ⏳ | ⏳ | ⏳ |
+| Reviews | ⏳ | ⏳ | ⏳ |
+| Products | ⏳ | ⏳ | ⏳ |
+| Sellers | ⏳ | ⏳ | ⏳ |
+| Geolocation | ⏳ | ⏳ | ⏳ |
+| Category Translation | ⏳ | ⏳ | ⏳ |
 ---
 
 ## Outcome
