@@ -1,312 +1,282 @@
-# Project Title
+# Project Template
 
-> One-line description of the business problem being solved.
+Use this template to create every new project in the **Product & Business Analytics Portfolio**.
 
----
-
-# Project Information
-
-| Attribute | Details |
-|----------|---------|
-| **Domain** | e.g., Banking, FinTech, E-commerce |
-| **Project Type** | Product Analytics / Business Analytics |
-| **Tools Used** | PostgreSQL, SQL, Excel |
-| **Dataset** | Public Dataset |
-| **Project Status** | Completed |
-| **Last Updated** | Month Year |
+Each project follows a structured, phase-based methodology that mirrors how analytics initiatives are executed in professional environments.
 
 ---
 
-# Executive Summary
+# Project Folder Structure
 
-Provide a concise overview of the project (150–250 words).
-
-Answer the following questions:
-
-- What problem is being addressed?
-- Why is it important?
-- What approach was taken?
-- What are the key findings?
-- What business decisions can this analysis support?
-
-> A reader should understand the entire project by reading only this section.
-
----
-
-# Business Context
-
-Provide the background required to understand the problem.
-
-Include information such as:
-
-- Industry
-- Organization or product
-- Market environment
-- Business process
-- Operational context
-
----
-
-# Business Problem
-
-Clearly define the business challenge.
-
-Focus only on the problem—not the data or technical implementation.
-
-Example:
-
-> Customer onboarding completion has declined over the last six months, resulting in lower activation rates and reduced revenue opportunities.
-
----
-
-# Stakeholders
-
-Identify the primary stakeholders who would benefit from this analysis.
-
-Examples:
-
-- Product Manager
-- Business Analyst
-- Marketing Team
-- Operations Team
-- Customer Success
-- Executive Leadership
-
----
-
-# Business Questions
-
-List the key questions this project aims to answer.
-
-Example:
-
-- Which customer segments are dropping off?
-- At which stage does the highest abandonment occur?
-- Which acquisition channels perform best?
-- What trends can be observed over time?
-- Which business metrics are most affected?
-
----
-
-# Success Metrics (KPIs)
-
-Define the metrics used to evaluate the problem.
-
-| KPI | Description |
-|------|-------------|
-| Conversion Rate | Percentage of users completing onboarding |
-| Churn Rate | Percentage of customers leaving |
-| Revenue | Total revenue generated |
-| Customer Retention | Returning customers |
-
----
-
-# Dataset Overview
-
-Describe the dataset used.
-
-Include:
-
-- Source
-- Number of records
-- Number of columns
-- Time period
-- Key fields
-- Data limitations
-
----
-
-# Assumptions & Scope
-
-## Assumptions
-
-Document assumptions made during the analysis.
-
-## Scope
-
-Clearly define:
-
-- What is included
-- What is excluded
-
----
-
-# Data Preparation
-
-Document all preprocessing activities.
-
-Examples:
-
-- Removed duplicate records
-- Converted data types
-- Standardized date formats
-- Handled missing values
-- Created calculated columns
-- Filtered invalid records
-
----
-
-# Exploratory Data Analysis (EDA)
-
-Summarize the initial exploration of the dataset.
-
-Examples:
-
-- Record counts
-- Missing value analysis
-- Data distributions
-- Outlier identification
-- Initial observations
-
----
-
-# SQL Analysis
-
-For every significant SQL query, document the following:
-
-## Business Question
-
-What question is this query answering?
-
----
-
-## SQL Query
-
-```sql
--- SQL goes here
-```
-
----
-
-## Result
-
-Summarize the output.
-
----
-
-## Business Interpretation
-
-Explain what the result means from a business perspective.
-
-Repeat this structure for every major query.
-
----
-
-# Dashboard & Visualizations
-
-Include screenshots of dashboards and charts.
-
-For each visualization, explain:
-
-- What does it show?
-- Why is it important?
-- What business decision does it support?
-
----
-
-# Key Insights
-
-Summarize the most important findings.
-
-Focus on **insights**, not observations.
-
-Example:
-
-❌ Sales increased in June.
-
-✅ Sales increased after introducing free shipping, suggesting shipping cost was a significant barrier to conversion.
-
----
-
-# Business Recommendations
-
-Provide actionable recommendations supported by the analysis.
-
-| Recommendation | Expected Business Benefit |
-|----------------|--------------------------|
-| Simplify registration | Reduce onboarding drop-off |
-| Improve onboarding emails | Increase activation rate |
-| Target high-value customer segments | Improve conversion |
-
----
-
-# Expected Business Impact
-
-Discuss how the recommendations could improve the business.
-
-Examples:
-
-- Increased revenue
-- Improved customer experience
-- Higher product adoption
-- Reduced operational costs
-- Better resource allocation
-
-Avoid unrealistic estimates unless supported by data.
-
----
-
-# Limitations
-
-Be transparent about the project's limitations.
-
-Examples:
-
-- Limited historical data
-- Missing customer demographic information
-- Public dataset constraints
-- Small sample size
-
----
-
-# Future Improvements
-
-Describe how the project could be expanded.
-
-Examples:
-
-- Integrate additional datasets
-- Build interactive Power BI dashboards
-- Develop predictive models
-- Conduct A/B testing
-- Perform cohort analysis
-
----
-
-# Project Reflection
-
-Reflect on what you learned during the project.
-
-Consider questions such as:
-
-- What business knowledge did I gain?
-- What analytical skills did I strengthen?
-- What technical skills improved?
-- What challenges did I encounter?
-- What would I do differently next time?
-
----
-
-# Project Structure
-
-```
-project-01/
+```text
+project-xx/
 │
 ├── README.md
-├── dataset/
-├── sql/
-├── excel/
-├── dashboard/
+│
 ├── assets/
-└── documentation/
+├── dataset/
+│
+├── phase-01-project-planning/
+│
+├── phase-02-database-design/
+│
+├── phase-03-data-exploration/
+│
+├── phase-04-business-analysis/
+│
+├── phase-05-dashboard-development/
+│
+└── phase-06-business-case-study/
 ```
 
 ---
 
-# References
+# Phase Overview
 
-List any datasets, documentation, research papers, or external resources used during the project.
+| Phase | Objective |
+|--------|-----------|
+| Phase 01 | Understand the business problem and the available data |
+| Phase 02 | Design and build the analytical database |
+| Phase 03 | Explore and validate the data |
+| Phase 04 | Answer business questions using analysis |
+| Phase 05 | Build dashboards and visualizations |
+| Phase 06 | Present findings as a business case study |
 
 ---
 
-> **"This project reflects my approach to solving business problems through structured analysis, evidence-based reasoning, and product thinking."**
+# Phase 01 – Project Planning
+
+## Objective
+
+Understand the business domain, identify stakeholders, define business questions, and document the available data.
+
+### Suggested Contents
+
+```text
+phase-01-project-planning/
+│
+├── README.md
+├── dataset_inventory.md
+├── data_dictionary.md
+├── entity_relationships.md
+└── business_questions.md
+```
+
+### Deliverables
+
+- Dataset Inventory
+- Data Dictionary
+- Entity Relationship Documentation
+- Business Questions
+
+---
+
+# Phase 02 – Database Design
+
+## Objective
+
+Transform raw data into a structured relational database.
+
+### Suggested Contents
+
+```text
+phase-02-database-design/
+│
+├── README.md
+│
+├── sql/
+│   ├── ddl/
+│   ├── dml/
+│   └── constraints.sql
+│
+├── validation/
+│
+└── screenshots/
+```
+
+### Deliverables
+
+- Database Schema
+- SQL Scripts
+- Validation Queries
+- Database Documentation
+
+---
+
+# Phase 03 – Data Exploration
+
+## Objective
+
+Understand the quality and characteristics of the dataset before performing business analysis.
+
+### Suggested Contents
+
+```text
+phase-03-data-exploration/
+│
+├── README.md
+├── sql/
+├── findings.md
+└── screenshots/
+```
+
+### Deliverables
+
+- Exploratory SQL
+- Data Quality Assessment
+- Initial Findings
+
+---
+
+# Phase 04 – Business Analysis
+
+## Objective
+
+Answer business questions and generate actionable insights.
+
+### Suggested Contents
+
+```text
+phase-04-business-analysis/
+│
+├── README.md
+├── sql/
+├── reports/
+├── screenshots/
+└── insights.md
+```
+
+### Deliverables
+
+- Business Analysis SQL
+- KPIs
+- Insights
+- Recommendations
+
+---
+
+# Phase 05 – Dashboard Development
+
+## Objective
+
+Communicate insights through interactive dashboards.
+
+### Suggested Contents
+
+```text
+phase-05-dashboard-development/
+│
+├── README.md
+├── powerbi/
+├── screenshots/
+└── documentation.md
+```
+
+### Deliverables
+
+- Dashboard
+- Dashboard Documentation
+- Dashboard Screenshots
+
+---
+
+# Phase 06 – Business Case Study
+
+## Objective
+
+Present the project as a complete business case study.
+
+### Suggested Contents
+
+```text
+phase-06-business-case-study/
+│
+├── README.md
+├── executive_summary.md
+├── final_report.md
+└── presentation/
+```
+
+### Deliverables
+
+- Executive Summary
+- Final Report
+- Business Recommendations
+- Presentation
+
+---
+
+# Project Workflow
+
+Every project should progress through the following lifecycle.
+
+```text
+Business Problem
+        ↓
+Business Context
+        ↓
+Stakeholders
+        ↓
+Business Questions
+        ↓
+Dataset Understanding
+        ↓
+Database Design
+        ↓
+Data Exploration
+        ↓
+Business Analysis
+        ↓
+Dashboard Development
+        ↓
+Business Recommendations
+        ↓
+Business Impact
+```
+
+---
+
+# Git Workflow
+
+Each major milestone should end with a Git commit.
+
+Examples:
+
+```
+docs: complete project planning
+
+feat(database): create customer and order tables
+
+feat(sql): complete exploratory analysis
+
+feat(dashboard): build executive dashboard
+
+docs: complete business case study
+```
+
+---
+
+# Repository Standards
+
+- Use descriptive file names.
+- Keep documentation close to the phase in which it was created.
+- Separate SQL by purpose where appropriate.
+- Document assumptions.
+- Support recommendations with evidence.
+- Keep README files updated throughout the project.
+- Commit changes frequently using meaningful commit messages.
+
+---
+
+# Success Criteria
+
+A completed project should allow a visitor to understand:
+
+- The business problem
+- The analytical approach
+- The technical implementation
+- The business insights
+- The recommendations
+- The overall business impact
+
+without requiring additional explanation.
