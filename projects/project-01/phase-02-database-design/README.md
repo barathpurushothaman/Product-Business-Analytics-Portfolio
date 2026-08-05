@@ -51,6 +51,10 @@ This approach mirrors how database structures are often built in analytical envi
 - Imported and validated the `products` dataset.
 - Implemented the primary key for the `products` table.
 - Established the foreign key relationship between `order_items` and `products`.
+- - Designed and created the `sellers` table using appropriate data types.
+- Imported and validated the `sellers` dataset.
+- Implemented the primary key for the `sellers` table.
+- Established the foreign key relationship between `order_items` and `sellers`.
 ---
 
 ## Deliverables
@@ -98,7 +102,7 @@ validation/validation_notes.md
 | Payments | ⏳ | ⏳ | ⏳ |
 | Reviews | ⏳ | ⏳ | ⏳ |
 | Products | ✅ | ✅ | ✅ |
-| Sellers | ⏳ | ⏳ | ⏳ |
+| Sellers | ✅ | ✅ | ✅ |
 | Geolocation | ⏳ | ⏳ | ⏳ |
 | Category Translation | ⏳ | ⏳ | ⏳ |
 ---

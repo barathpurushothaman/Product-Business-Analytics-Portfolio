@@ -75,3 +75,30 @@ SELECT
 FROM olist.products
 GROUP BY product_id
 HAVING COUNT(*) > 1;
+
+-- =====================================================
+-- Sellers Table Validation
+-- =====================================================
+
+-- Verify total number of records
+SELECT COUNT(*) AS sellers_count
+FROM olist.sellers;
+
+-- Preview imported data
+SELECT *
+FROM olist.sellers
+LIMIT 10;
+
+-- Candidate Key Validation
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT(DISTINCT seller_id) AS unique_seller_ids
+FROM olist.sellers;
+
+-- Duplicate Investigation
+SELECT
+    seller_id,
+    COUNT(*) AS occurrence_count
+FROM olist.sellers
+GROUP BY seller_id
+HAVING COUNT(*) > 1;
