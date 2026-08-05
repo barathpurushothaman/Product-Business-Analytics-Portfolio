@@ -55,6 +55,11 @@ This approach mirrors how database structures are often built in analytical envi
 - Imported and validated the `sellers` dataset.
 - Implemented the primary key for the `sellers` table.
 - Established the foreign key relationship between `order_items` and `sellers`.
+- - Designed and created the `payments` table using appropriate data types.
+- Imported and validated the `payments` dataset.
+- Implemented a composite primary key for the `payments` table.
+- Established the foreign key relationship between `payments` and `orders`.
+- Verified the business rule that an order can contain multiple payment transactions.
 ---
 
 ## Deliverables
@@ -99,7 +104,7 @@ validation/validation_notes.md
 | Customers | ✅ | ✅ | ✅ |
 | Orders | ✅ | ✅ | ✅ |
 | Order Items | ✅ | ✅ | ✅ |
-| Payments | ⏳ | ⏳ | ⏳ |
+| Payments | ✅ | ✅ | ✅ |
 | Reviews | ⏳ | ⏳ | ⏳ |
 | Products | ✅ | ✅ | ✅ |
 | Sellers | ✅ | ✅ | ✅ |

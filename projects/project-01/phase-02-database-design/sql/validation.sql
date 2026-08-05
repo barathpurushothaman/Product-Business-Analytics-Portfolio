@@ -102,3 +102,31 @@ SELECT
 FROM olist.sellers
 GROUP BY seller_id
 HAVING COUNT(*) > 1;
+
+-- =====================================================
+-- Payments Table Validation
+-- =====================================================
+
+-- Verify total number of records
+SELECT COUNT(*) AS payments_count
+FROM olist.payments;
+
+-- Preview imported data
+SELECT *
+FROM olist.payments
+LIMIT 10;
+
+-- Candidate Key Validation
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT(DISTINCT (order_id, payment_sequential)) AS unique_payment_records
+FROM olist.payments;
+
+-- Business Rule Validation
+-- Identify orders with multiple payment transactions
+SELECT
+    order_id,
+    COUNT(*) AS payment_count
+FROM olist.payments
+GROUP BY order_id
+HAVING COUNT(*) > 1;

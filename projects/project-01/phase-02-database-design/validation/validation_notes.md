@@ -26,6 +26,7 @@ The following checks were completed for each imported table:
 | Orders Items | ✅ Passed | Successfully imported, validated, and composite primary key verified. |
 | Products | ✅ Passed | Successfully imported, validated, and composite primary key verified. |
 | Sellers | ✅ Passed | Successfully imported, validated, and composite primary key verified. |
+| Payments | ✅ Passed | Successfully imported, validated, and composite primary key verified. |
 
 ---
 
@@ -50,6 +51,7 @@ The following constraints have been implemented and verified during Phase 02.
 | Order Items | `(order_id, order_item_id)` |
 | Products | `product_id` |
 | Sellers | `seller_id` |
+| Payments | `order_id, payment_sequential` |
 
 ### Foreign Keys
 
@@ -59,6 +61,7 @@ The following constraints have been implemented and verified during Phase 02.
 | Order Items | `order_id` | `orders.order_id` |
 | Order Items | `product_id` | `products.product_id` |
 | Order Items | `seller_id` | `sellers.seller_id` |
+| Payments | `order_id` | `orders.order_id` |
 
 ### Summary
 

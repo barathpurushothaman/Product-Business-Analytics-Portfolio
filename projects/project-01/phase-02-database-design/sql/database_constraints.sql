@@ -64,3 +64,16 @@ ALTER TABLE olist.order_items
 ADD CONSTRAINT fk_order_items_sellers
 FOREIGN KEY (seller_id)
 REFERENCES olist.sellers(seller_id);
+
+-- =====================================================
+-- Payments
+-- =====================================================
+
+ALTER TABLE olist.payments
+ADD CONSTRAINT pk_payments
+PRIMARY KEY (order_id, payment_sequential);
+
+ALTER TABLE olist.payments
+ADD CONSTRAINT fk_payments_orders
+FOREIGN KEY (order_id)
+REFERENCES olist.orders(order_id);
