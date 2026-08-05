@@ -209,3 +209,80 @@ geolocation_city,
 geolocation_state
 )) AS unique_records
 FROM olist.geolocation;
+
+-- ==========================================================
+-- Product Category Translation Validation
+-- ==========================================================
+
+-- Verify record count
+
+SELECT COUNT(*) AS product_category_translation_count
+FROM olist.product_category_name_translation;
+
+------------------------------------------------------------
+
+-- View sample records
+
+SELECT *
+FROM olist.product_category_name_translation
+LIMIT 10;
+
+------------------------------------------------------------
+
+-- Candidate Key Validation
+
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT(DISTINCT product_category_name) AS unique_product_categories
+FROM olist.product_category_name_translation;
+
+------------------------------------------------------------
+
+-- Investigate duplicate category names
+
+SELECT
+    product_category_name,
+    COUNT(*) AS occurrence_count
+FROM olist.product_category_name_translation
+GROUP BY product_category_name
+HAVING COUNT(*) > 1;
+
+------------------------------------------------------------
+
+-- Business Rule Validation
+-- Verify that each Portuguese category maps to only one
+-- English category.
+
+SELECT
+    product_category_name,
+    COUNT(DISTINCT product_category_name_english) AS english_name_count
+FROM olist.product_category_name_translation
+GROUP BY product_category_name
+HAVING COUNT(DISTINCT product_category_name_english) > 1;
+
+------------------------------------------------------------
+
+-- Candidate Foreign Key Validation
+-- Check whether every product category exists in the
+-- translation lookup table.
+
+SELECT
+    COUNT(*) AS unmatched_categories
+FROM olist.products p
+LEFT JOIN olist.product_category_name_translation t
+ON p.product_category_name = t.product_category_name
+WHERE t.product_category_name IS NULL;
+
+------------------------------------------------------------
+
+-- Investigate unmatched categories
+
+SELECT
+    p.product_category_name,
+    COUNT(*) AS product_count
+FROM olist.products p
+LEFT JOIN olist.product_category_name_translation t
+ON p.product_category_name = t.product_category_name
+WHERE t.product_category_name IS NULL
+GROUP BY p.product_category_name
+ORDER BY product_count DESC;

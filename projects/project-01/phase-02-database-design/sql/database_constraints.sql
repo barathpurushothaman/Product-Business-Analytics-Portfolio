@@ -109,3 +109,31 @@ REFERENCES olist.orders(order_id);
 --
 -- Constraints will be introduced only after data
 -- cleansing in the analytical layer.
+
+-- ==========================================================
+-- Product Category Translation
+-- ==========================================================
+
+ALTER TABLE olist.product_category_name_translation
+ADD CONSTRAINT pk_product_category_name
+PRIMARY KEY (product_category_name);
+
+-- ==========================================================
+-- Foreign Key
+-- ==========================================================
+
+-- Candidate foreign key validation identified source data
+-- inconsistencies between the products table and the
+-- product_category_name_translation lookup table.
+
+-- Missing categories:
+--     pc_gamer
+--     portateis_cozinha_e_preparadores_de_alimentos
+
+-- Therefore the following foreign key was intentionally
+-- NOT implemented.
+
+-- ALTER TABLE olist.products
+-- ADD CONSTRAINT fk_products_category
+-- FOREIGN KEY (product_category_name)
+-- REFERENCES olist.product_category_name_translation(product_category_name);

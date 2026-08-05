@@ -108,6 +108,45 @@ Based on the validation results, the following constraints were implemented:
 
 This approach preserves referential integrity while accurately representing the structure of the Olist dataset without making unsupported assumptions about review uniqueness.
 
+---
+
+### Product Category Translation
+
+The `product_category_name_translation` table was evaluated to determine whether a foreign key relationship could be established with the `products` table.
+
+#### Candidate Key Validation
+
+Validation confirmed that:
+
+- `product_category_name` is unique.
+- Each Portuguese category maps to a single English translation.
+- `product_category_name` is a suitable natural primary key.
+
+#### Candidate Foreign Key Validation
+
+Before implementing a foreign key, the relationship between `products.product_category_name` and `product_category_name_translation.product_category_name` was validated.
+
+The validation identified:
+
+- **610** products with a `NULL` category value.
+- **10** products assigned to the category `portateis_cozinha_e_preparadores_de_alimentos`, which is not present in the translation table.
+- **3** products assigned to the category `pc_gamer`, which is not present in the translation table.
+
+#### Design Decision
+
+A primary key was implemented on:
+
+- `product_category_name`
+
+The proposed foreign key between:
+
+- `products.product_category_name`
+- `product_category_name_translation.product_category_name`
+
+was intentionally **not implemented** because the translation lookup table does not contain all category values referenced by the products dataset.
+
+Rather than modifying the original source data, the dataset was preserved in its original state and the inconsistency was documented as a source data quality issue.
+
 ### Geolocation
 
 The `geolocation` table required additional investigation before determining whether database constraints could be implemented.
