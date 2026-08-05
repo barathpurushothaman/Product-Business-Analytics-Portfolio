@@ -38,3 +38,16 @@ ALTER TABLE olist.order_items
 ADD CONSTRAINT fk_order_items_orders
 FOREIGN KEY (order_id)
 REFERENCES olist.orders(order_id);
+
+-- =====================================================
+-- Products
+-- =====================================================
+
+ALTER TABLE olist.products
+ADD CONSTRAINT pk_products
+PRIMARY KEY (product_id);
+
+ALTER TABLE olist.order_items
+ADD CONSTRAINT fk_order_items_products
+FOREIGN KEY (product_id)
+REFERENCES olist.products(product_id);

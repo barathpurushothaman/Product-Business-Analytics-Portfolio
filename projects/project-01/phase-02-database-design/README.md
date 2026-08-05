@@ -47,6 +47,10 @@ This approach mirrors how database structures are often built in analytical envi
 - Imported the `order_items` dataset.
 - Implemented a composite primary key for the `order_items` table.
 - Established the foreign key relationship between `order_items` and `orders`.
+- Designed and created the `products` table using appropriate data types.
+- Imported and validated the `products` dataset.
+- Implemented the primary key for the `products` table.
+- Established the foreign key relationship between `order_items` and `products`.
 ---
 
 ## Deliverables

@@ -24,6 +24,7 @@ The following checks were completed for each imported table:
 | Customers | ✅ Passed | Successfully imported and record count verified. |
 | Orders | ✅ Passed | Successfully imported and record count verified. |
 | Orders Items | ✅ Passed | Successfully imported, validated, and composite primary key verified. |
+| Products | ✅ Passed | Successfully imported, validated, and composite primary key verified. |
 
 ---
 
@@ -37,19 +38,61 @@ The following checks were completed for each imported table:
 
 ## Constraint Validation
 
-The following database constraints were successfully implemented and verified:
+The following constraints have been implemented and verified during Phase 02.
 
-### Additional Constraints
+### Primary Keys
 
-The `order_items` table was updated with:
+| Table | Primary Key |
+|--------|-------------|
+| Customers | `customer_id` |
+| Orders | `order_id` |
+| Order Items | `(order_id, order_item_id)` |
+| Products | `product_id` |
 
-- Composite Primary Key:
-  - `(order_id, order_item_id)`
+### Foreign Keys
 
-- Foreign Key:
-  - `order_items.order_id` → `orders.order_id`
+| Child Table | Foreign Key | References |
+|-------------|-------------|------------|
+| Orders | `customer_id` | `customers.customer_id` |
+| Order Items | `order_id` | `orders.order_id` |
+| Order Items | `product_id` | `products.product_id` |
 
-The composite primary key ensures that each item within an order is uniquely identified, while the foreign key enforces referential integrity between orders and order items.
+### Summary
+
+All implemented constraints were successfully verified after creation.
+
+These constraints enforce:
+
+- Entity uniqueness through primary keys.
+- Referential integrity through foreign keys.
+- Consistent relationships between business entities.
+
+### Primary Keys
+
+| Table | Primary Key |
+|--------|-------------|
+| Customers | `customer_id` |
+| Orders | `order_id` |
+| Order Items | `(order_id, order_item_id)` |
+| Products | `product_id` |
+
+### Foreign Keys
+
+| Child Table | Foreign Key | References |
+|-------------|-------------|------------|
+| Orders | `customer_id` | `customers.customer_id` |
+| Order Items | `order_id` | `orders.order_id` |
+| Order Items | `product_id` | `products.product_id` |
+
+### Summary
+
+All implemented constraints were successfully verified after creation.
+
+These constraints enforce:
+
+- Entity uniqueness through primary keys.
+- Referential integrity through foreign keys.
+- Consistent relationships between business entities.
 
 ### Primary Keys
 
