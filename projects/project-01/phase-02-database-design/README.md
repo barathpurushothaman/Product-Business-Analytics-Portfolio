@@ -97,7 +97,7 @@ validation/validation_notes.md
 | Order Items | ✅ | ✅ | ✅ |
 | Payments | ⏳ | ⏳ | ⏳ |
 | Reviews | ⏳ | ⏳ | ⏳ |
-| Products | ⏳ | ⏳ | ⏳ |
+| Products | ✅ | ✅ | ✅ |
 | Sellers | ⏳ | ⏳ | ⏳ |
 | Geolocation | ⏳ | ⏳ | ⏳ |
 | Category Translation | ⏳ | ⏳ | ⏳ |
