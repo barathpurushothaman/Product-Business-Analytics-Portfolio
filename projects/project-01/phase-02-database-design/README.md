@@ -67,16 +67,16 @@ This approach mirrors how database structures are often built in analytical envi
 - Imported and validated the `products` dataset.
 - Implemented the primary key for the `products` table.
 - Established the foreign key relationship between `order_items` and `products`.
-- - Designed and created the `sellers` table using appropriate data types.
+- Designed and created the `sellers` table using appropriate data types.
 - Imported and validated the `sellers` dataset.
 - Implemented the primary key for the `sellers` table.
 - Established the foreign key relationship between `order_items` and `sellers`.
-- - Designed and created the `payments` table using appropriate data types.
+- Designed and created the `payments` table using appropriate data types.
 - Imported and validated the `payments` dataset.
 - Implemented a composite primary key for the `payments` table.
 - Established the foreign key relationship between `payments` and `orders`.
 - Verified the business rule that an order can contain multiple payment transactions.
-- - Investigated review data anomalies to determine the correct primary key.
+- Investigated review data anomalies to determine the correct primary key.
 - Implemented a composite primary key for the `reviews` table based on dataset validation.
 - Established a foreign key relationship between `reviews` and `orders`.
 ---
