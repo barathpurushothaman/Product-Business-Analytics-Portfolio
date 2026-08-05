@@ -178,3 +178,34 @@ SELECT
 FROM olist.reviews
 GROUP BY order_id
 HAVING COUNT(*) > 1;
+
+-- ===========================================================
+-- Geolocation Validation
+-- ===========================================================
+
+-- Total Rows
+
+SELECT COUNT(*)
+FROM olist.geolocation;
+
+-- Duplicate ZIP Prefixes
+
+SELECT
+    geolocation_zip_code_prefix,
+    COUNT(*)
+FROM olist.geolocation
+GROUP BY geolocation_zip_code_prefix
+HAVING COUNT(*) > 1;
+
+-- Candidate Key Test
+
+SELECT
+COUNT(*) AS total_rows,
+COUNT(DISTINCT(
+geolocation_zip_code_prefix,
+geolocation_lat,
+geolocation_lng,
+geolocation_city,
+geolocation_state
+)) AS unique_records
+FROM olist.geolocation;

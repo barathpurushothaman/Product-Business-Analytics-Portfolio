@@ -71,7 +71,7 @@ The following database constraints were implemented and verified during Phase 02
 
 ---
 
-## Data Modeling Discoveries
+## Data Modeling & Business Rule Discoveries
 
 During constraint implementation, several business rules were validated against the imported dataset before defining the final database design.
 
@@ -107,6 +107,28 @@ Based on the validation results, the following constraints were implemented:
 - `reviews.order_id` → `orders.order_id`
 
 This approach preserves referential integrity while accurately representing the structure of the Olist dataset without making unsupported assumptions about review uniqueness.
+
+### Geolocation
+
+The `geolocation` table required additional investigation before determining whether database constraints could be implemented.
+
+#### Candidate Key Validation
+
+Validation confirmed that:
+
+- `geolocation_zip_code_prefix` is **not unique**.
+- Multiple cities share the same ZIP code prefix.
+- Multiple states share the same ZIP code prefix.
+- Multiple latitude and longitude combinations exist for the same ZIP code prefix.
+- The complete business record (`geolocation_zip_code_prefix`, `geolocation_lat`, `geolocation_lng`, `geolocation_city`, `geolocation_state`) is **not unique**.
+
+Further investigation confirmed that the imported source dataset contains duplicate geolocation records.
+
+#### Design Decision
+
+No primary key or foreign key constraints were implemented for the `geolocation` table.
+
+The dataset has been intentionally preserved in its original form to maintain source fidelity. Data cleansing and deduplication will be addressed during the analytical data preparation phase.
 
 ## Conclusion
 

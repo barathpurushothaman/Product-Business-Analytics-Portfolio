@@ -17,10 +17,11 @@ Each table in this phase follows a consistent implementation process:
 3. Data Import
 4. Data Validation
 5. Candidate Key Validation
-6. Business Rule Validation
-7. Constraint Implementation
-8. Documentation
-9. Version Control
+6. Data Quality Assessment
+7. Business Rule Validation
+8. Constraint Implementation (where supported)
+9. Documentation
+10. Version Contro
 
 ---
 
@@ -79,6 +80,12 @@ This approach mirrors how database structures are often built in analytical envi
 - Investigated review data anomalies to determine the correct primary key.
 - Implemented a composite primary key for the `reviews` table based on dataset validation.
 - Established a foreign key relationship between `reviews` and `orders`.
+- Designed and created the `geolocation` table using appropriate data types.
+- Imported and validated the `geolocation` dataset.
+- Performed candidate key validation to evaluate possible primary key combinations.
+- Identified duplicate business records within the source dataset.
+- Documented the decision to preserve the raw dataset without implementing database constraints.
+- 
 ---
 
 ## Deliverables
@@ -125,13 +132,15 @@ validation/validation_notes.md
 | Sellers | ✅ Imported, Validated & Constrained |
 | Payments | ✅ Imported, Validated & Constrained |
 | Reviews | ✅ Imported, Validated & Constrained |
-| Geolocation | ⏳ Pending |
+| Geolocation | ✅ Imported & Validated *(No constraints - documented)* |
 | Category Translation | ⏳ Pending |
 ---
 
 ## Outcome
 
-A PostgreSQL database has been successfully created, and the first two datasets have been imported and validated. The database structure is now ready for the remaining datasets to be loaded.
+The operational PostgreSQL database has been successfully established and the imported datasets have been validated incrementally. Where supported by the source data, primary and foreign key constraints have been implemented to enforce entity and referential integrity.
+
+For datasets that do not expose a reliable natural key (such as `geolocation`), the original source data has been preserved and the design decision has been documented for future analytical processing.
 
 ---
 

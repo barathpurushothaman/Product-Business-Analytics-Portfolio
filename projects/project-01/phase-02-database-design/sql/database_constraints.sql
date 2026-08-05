@@ -94,3 +94,18 @@ ALTER TABLE olist.reviews
 ADD CONSTRAINT fk_reviews_orders
 FOREIGN KEY (order_id)
 REFERENCES olist.orders(order_id);
+
+-- ====================================================
+-- Geolocation
+-- ====================================================
+
+-- No constraints implemented.
+
+-- Reason:
+-- Candidate key validation confirmed that the imported
+-- dataset contains duplicate business records.
+--
+-- The source data has been preserved exactly as provided.
+--
+-- Constraints will be introduced only after data
+-- cleansing in the analytical layer.
