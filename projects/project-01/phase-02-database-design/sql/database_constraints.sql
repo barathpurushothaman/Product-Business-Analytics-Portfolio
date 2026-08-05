@@ -4,25 +4,37 @@
 -- =====================================================
 
 -- =====================================================
--- Primary Keys
+-- Customers
 -- =====================================================
 
--- Customers
 ALTER TABLE olist.customers
 ADD CONSTRAINT pk_customers
 PRIMARY KEY (customer_id);
 
+
+-- =====================================================
 -- Orders
+-- =====================================================
+
 ALTER TABLE olist.orders
 ADD CONSTRAINT pk_orders
 PRIMARY KEY (order_id);
 
--- =====================================================
--- Foreign Keys
--- =====================================================
-
--- Orders → Customers
 ALTER TABLE olist.orders
 ADD CONSTRAINT fk_orders_customers
 FOREIGN KEY (customer_id)
 REFERENCES olist.customers(customer_id);
+
+
+-- =====================================================
+-- Order Items
+-- =====================================================
+
+ALTER TABLE olist.order_items
+ADD CONSTRAINT pk_order_items
+PRIMARY KEY (order_id, order_item_id);
+
+ALTER TABLE olist.order_items
+ADD CONSTRAINT fk_order_items_orders
+FOREIGN KEY (order_id)
+REFERENCES olist.orders(order_id);

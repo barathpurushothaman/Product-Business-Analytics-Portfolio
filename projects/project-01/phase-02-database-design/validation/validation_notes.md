@@ -23,6 +23,7 @@ The following checks were completed for each imported table:
 |--------|-------------------|-------|
 | Customers | ✅ Passed | Successfully imported and record count verified. |
 | Orders | ✅ Passed | Successfully imported and record count verified. |
+| Orders Items | ✅ Passed | Successfully imported, validated, and composite primary key verified. |
 
 ---
 
@@ -37,6 +38,18 @@ The following checks were completed for each imported table:
 ## Constraint Validation
 
 The following database constraints were successfully implemented and verified:
+
+### Additional Constraints
+
+The `order_items` table was updated with:
+
+- Composite Primary Key:
+  - `(order_id, order_item_id)`
+
+- Foreign Key:
+  - `order_items.order_id` → `orders.order_id`
+
+The composite primary key ensures that each item within an order is uniquely identified, while the foreign key enforces referential integrity between orders and order items.
 
 ### Primary Keys
 

@@ -43,7 +43,10 @@ This approach mirrors how database structures are often built in analytical envi
 - Established the foundation for future SQL analysis.
 - Defined primary key constraints for imported tables.
 - Established the foreign key relationship between customers and orders.
-
+- Designed and created the `order_items` table using appropriate data types.
+- Imported the `order_items` dataset.
+- Implemented a composite primary key for the `order_items` table.
+- Established the foreign key relationship between `order_items` and `orders`.
 ---
 
 ## Deliverables
@@ -87,7 +90,7 @@ validation/validation_notes.md
 |--------|:------:|:----------:|:-----------:|
 | Customers | ✅ | ✅ | ✅ |
 | Orders | ✅ | ✅ | ✅ |
-| Order Items | ⏳ | ⏳ | ⏳ |
+| Order Items | ✅ | ✅ | ✅ |
 | Payments | ⏳ | ⏳ | ⏳ |
 | Reviews | ⏳ | ⏳ | ⏳ |
 | Products | ⏳ | ⏳ | ⏳ |
