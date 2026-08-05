@@ -8,6 +8,22 @@
 
 ---
 
+## Phase Methodology
+
+Each table in this phase follows a consistent implementation process:
+
+1. Business Discovery
+2. Table Design
+3. Data Import
+4. Data Validation
+5. Candidate Key Validation
+6. Business Rule Validation
+7. Constraint Implementation
+8. Documentation
+9. Version Control
+
+---
+
 ## Objective
 
 Design and implement a relational database from the raw Olist CSV files.
@@ -60,6 +76,9 @@ This approach mirrors how database structures are often built in analytical envi
 - Implemented a composite primary key for the `payments` table.
 - Established the foreign key relationship between `payments` and `orders`.
 - Verified the business rule that an order can contain multiple payment transactions.
+- - Investigated review data anomalies to determine the correct primary key.
+- Implemented a composite primary key for the `reviews` table based on dataset validation.
+- Established a foreign key relationship between `reviews` and `orders`.
 ---
 
 ## Deliverables
@@ -95,21 +114,19 @@ validation/validation_notes.md
 
 ---
 
-## Current Progress
-
 ## Database Build Progress
 
-| Table | Import | Validation | Constraints |
-|--------|:------:|:----------:|:-----------:|
-| Customers | ✅ | ✅ | ✅ |
-| Orders | ✅ | ✅ | ✅ |
-| Order Items | ✅ | ✅ | ✅ |
-| Payments | ✅ | ✅ | ✅ |
-| Reviews | ⏳ | ⏳ | ⏳ |
-| Products | ✅ | ✅ | ✅ |
-| Sellers | ✅ | ✅ | ✅ |
-| Geolocation | ⏳ | ⏳ | ⏳ |
-| Category Translation | ⏳ | ⏳ | ⏳ |
+| Table | Status |
+|--------|--------|
+| Customers | ✅ Imported, Validated & Constrained |
+| Orders | ✅ Imported, Validated & Constrained |
+| Order Items | ✅ Imported, Validated & Constrained |
+| Products | ✅ Imported, Validated & Constrained |
+| Sellers | ✅ Imported, Validated & Constrained |
+| Payments | ✅ Imported, Validated & Constrained |
+| Reviews | ✅ Imported, Validated & Constrained |
+| Geolocation | ⏳ Pending |
+| Category Translation | ⏳ Pending |
 ---
 
 ## Outcome

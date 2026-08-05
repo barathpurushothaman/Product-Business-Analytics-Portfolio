@@ -77,3 +77,20 @@ ALTER TABLE olist.payments
 ADD CONSTRAINT fk_payments_orders
 FOREIGN KEY (order_id)
 REFERENCES olist.orders(order_id);
+
+-- ===========================================================
+-- Reviews
+-- ===========================================================
+
+-- Composite Primary Key
+
+ALTER TABLE olist.reviews
+ADD CONSTRAINT pk_reviews
+PRIMARY KEY (review_id, order_id);
+
+-- Foreign Key
+
+ALTER TABLE olist.reviews
+ADD CONSTRAINT fk_reviews_orders
+FOREIGN KEY (order_id)
+REFERENCES olist.orders(order_id);

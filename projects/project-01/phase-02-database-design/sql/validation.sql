@@ -130,3 +130,51 @@ SELECT
 FROM olist.payments
 GROUP BY order_id
 HAVING COUNT(*) > 1;
+
+-- ===========================================================
+-- Reviews Validation
+-- ===========================================================
+
+-- Validate row count
+
+SELECT COUNT(*) AS reviews_count
+FROM olist.reviews;
+
+-- Preview data
+
+SELECT *
+FROM olist.reviews
+LIMIT 10;
+
+-- ===========================================================
+-- Candidate Key Validation
+-- ===========================================================
+
+-- Verify that (review_id, order_id) uniquely identifies every record
+
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT(DISTINCT (review_id, order_id)) AS unique_review_order_pairs
+FROM olist.reviews;
+
+-- ===========================================================
+-- Business Rule Investigation
+-- ===========================================================
+
+-- Investigate duplicate review IDs
+
+SELECT
+    review_id,
+    COUNT(*) AS occurrence_count
+FROM olist.reviews
+GROUP BY review_id
+HAVING COUNT(*) > 1;
+
+-- Investigate orders with multiple reviews
+
+SELECT
+    order_id,
+    COUNT(*) AS review_count
+FROM olist.reviews
+GROUP BY order_id
+HAVING COUNT(*) > 1;
