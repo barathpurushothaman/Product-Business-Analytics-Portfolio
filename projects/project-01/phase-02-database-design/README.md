@@ -1,16 +1,43 @@
 # Phase 02 - Database Design
 
-**Project:** Olist E-Commerce Business Analysis
+## Project Information
 
-**Status:** 🚧 In Progress
-
-**Tools Used:** PostgreSQL, pgAdmin, SQL
+| Attribute | Details |
+|----------|---------|
+| **Project** | Olist E-Commerce Business Analysis |
+| **Phase** | Phase 02 - Database Design |
+| **Status** | ✅ Completed |
+| **Tools** | PostgreSQL, pgAdmin 4, SQL, Git, GitHub |
 
 ---
 
-## Phase Methodology
+# Overview
 
-Each table in this phase follows a consistent implementation process:
+Phase 02 focuses on designing and implementing the operational PostgreSQL database that serves as the foundation for all subsequent business analysis.
+
+Rather than simply importing CSV datasets into PostgreSQL, this phase emphasizes relational database design, candidate key validation, business rule validation, data quality assessment, and the implementation of database constraints only where supported by the source data.
+
+The completed database accurately represents both the structure and quality of the original Olist dataset while preserving important source data characteristics for future analytical processing.
+
+---
+
+# Objectives
+
+The objectives of this phase were to:
+
+- Design a relational PostgreSQL database from the raw Olist datasets.
+- Create business-aligned database tables using appropriate PostgreSQL data types.
+- Import and validate all source datasets.
+- Identify suitable primary keys through candidate key analysis.
+- Establish referential integrity where supported by the source data.
+- Investigate source data quality before implementing constraints.
+- Produce reusable SQL validation scripts and technical documentation.
+
+---
+
+# Database Design Methodology
+
+Each table was implemented using the following standardized workflow.
 
 1. Business Discovery
 2. Table Design
@@ -19,115 +46,105 @@ Each table in this phase follows a consistent implementation process:
 5. Candidate Key Validation
 6. Data Quality Assessment
 7. Business Rule Validation
-8. Constraint Implementation (where supported)
+8. Constraint Implementation *(where supported)*
 9. Documentation
-10. Version Contro
+10. Version Control
+
+This methodology mirrors real-world database implementation projects where structural constraints are applied only after imported data has been validated.
 
 ---
 
-## Objective
+# Database Architecture
 
-Design and implement a relational database from the raw Olist CSV files.
-
-The objective of this phase is to transform raw datasets into a structured PostgreSQL database that supports reliable business analysis and reporting.
-
----
-
-## Database Architecture
-
-The project database is named **`olist_business_analysis`**.
-
-All project tables are stored within the **`olist`** schema to keep the project objects logically separated from PostgreSQL's default `public` schema.
-
-Unless otherwise noted, SQL queries in this project use schema-qualified table names (for example, `olist.customers`) to explicitly reference project tables.
-
----
-
-## Database Constraints
-
-The source CSV files do not contain database constraints such as primary keys or foreign keys. After importing the data into PostgreSQL, constraints are added incrementally to establish data integrity and accurately model the relationships between entities.
-
-This approach mirrors how database structures are often built in analytical environments, where data is first loaded and validated before structural constraints are applied.
-
----
-
-## Activities Performed
-
-- Created the PostgreSQL database for the project.
-- Imported raw CSV datasets into PostgreSQL using pgAdmin.
-- Validated imported tables to ensure successful data loading.
-- Verified record counts and table structure.
-- Established the foundation for future SQL analysis.
-- Defined primary key constraints for imported tables.
-- Established the foreign key relationship between customers and orders.
-- Designed and created the `order_items` table using appropriate data types.
-- Imported the `order_items` dataset.
-- Implemented a composite primary key for the `order_items` table.
-- Established the foreign key relationship between `order_items` and `orders`.
-- Designed and created the `products` table using appropriate data types.
-- Imported and validated the `products` dataset.
-- Implemented the primary key for the `products` table.
-- Established the foreign key relationship between `order_items` and `products`.
-- Designed and created the `sellers` table using appropriate data types.
-- Imported and validated the `sellers` dataset.
-- Implemented the primary key for the `sellers` table.
-- Established the foreign key relationship between `order_items` and `sellers`.
-- Designed and created the `payments` table using appropriate data types.
-- Imported and validated the `payments` dataset.
-- Implemented a composite primary key for the `payments` table.
-- Established the foreign key relationship between `payments` and `orders`.
-- Verified the business rule that an order can contain multiple payment transactions.
-- Investigated review data anomalies to determine the correct primary key.
-- Implemented a composite primary key for the `reviews` table based on dataset validation.
-- Established a foreign key relationship between `reviews` and `orders`.
-- Designed and created the `geolocation` table using appropriate data types.
-- Imported and validated the `geolocation` dataset.
-- Performed candidate key validation to evaluate possible primary key combinations.
-- Identified duplicate business records within the source dataset.
-- Documented the decision to preserve the raw dataset without implementing database constraints.
-- - Designed and created the `product_category_name_translation` lookup table using appropriate data types.
-- Imported and validated the category translation dataset.
-- Implemented the primary key for the translation table.
-- Validated the candidate foreign key relationship between `products` and `product_category_name_translation`.
-- Identified source data inconsistencies that prevented safe implementation of the foreign key.
-- Documented the design decision to preserve the original source data without enforcing referential integrity.
-- 
----
-
-## Deliverables
-
-- PostgreSQL database created
-- Imported datasets
-- Database constraints
-- SQL validation scripts
-- Validation documentation
-
----
-
-## Validation
-
-Each imported table is validated by checking:
-
-- Successful import
-- Record count
-- Column structure
-- Data integrity
-
-Validation queries are stored in:
+### Database
 
 ```text
-sql/validation.sql
+olist_business_analysis
 ```
 
-Validation observations are documented in:
+### Schema
 
 ```text
-validation/validation_notes.md
+olist
 ```
+
+All project tables are stored within the dedicated `olist` schema to logically separate project objects from PostgreSQL's default `public` schema.
+
+All SQL scripts use schema-qualified table names (for example, `olist.customers`) to improve readability, maintainability, and consistency.
 
 ---
 
-## Database Build Progress
+# Key Design Decisions
+
+One of the primary objectives of this phase was to validate the imported data before implementing database constraints. Rather than assuming relationships, every primary key and foreign key was verified against the source dataset.
+
+### Reviews
+
+Validation confirmed that neither `review_id` nor `order_id` uniquely identified review records.
+
+Candidate key analysis determined that the combination:
+
+```text
+(review_id, order_id)
+```
+
+uniquely identifies every review.
+
+**Design Decision**
+
+- Composite Primary Key implemented.
+
+---
+
+### Payments
+
+Business rule validation confirmed that a single customer order may contain multiple payment transactions.
+
+The combination:
+
+```text
+(order_id, payment_sequential)
+```
+
+accurately represents this business relationship.
+
+**Design Decision**
+
+- Composite Primary Key implemented.
+
+---
+
+### Geolocation
+
+Candidate key validation confirmed that:
+
+- ZIP prefixes are not unique.
+- Latitude and longitude combinations are not unique.
+- Duplicate business records exist within the source dataset.
+
+No reliable natural primary key exists.
+
+**Design Decision**
+
+The dataset was intentionally preserved in its original form without implementing database constraints.
+
+---
+
+### Product Category Translation
+
+Candidate foreign key validation identified category values referenced within the `products` table that do not exist within the translation lookup table.
+
+Rather than modifying the original source dataset, referential integrity was intentionally not enforced.
+
+**Design Decision**
+
+- Primary Key implemented.
+- Foreign Key intentionally omitted.
+- Data quality issue documented.
+
+---
+
+# Database Summary
 
 | Table | Status |
 |--------|--------|
@@ -138,25 +155,84 @@ validation/validation_notes.md
 | Sellers | ✅ Imported, Validated & Constrained |
 | Payments | ✅ Imported, Validated & Constrained |
 | Reviews | ✅ Imported, Validated & Constrained |
-| Geolocation | ✅ Imported & Validated *(No constraints - documented)* |
-| Category Translation | ✅ Imported, Validated & Constrained* |
+| Geolocation | ✅ Imported & Validated *(No constraints implemented)* |
+| Product Category Translation | ✅ Imported & Validated *(Primary Key only)* |
 
 ---
 
-## Outcome
+# Validation Strategy
 
-## Outcome
+Each imported dataset was validated through the following checks.
 
-The Phase 02 database implementation has been completed successfully.
+- Successful import
+- Record count verification
+- Table structure verification
+- Candidate key validation
+- Business rule validation
+- Data quality assessment
+- Constraint verification *(where applicable)*
 
-All Olist datasets were imported into PostgreSQL, validated against the source data, and documented. Primary and foreign key relationships were established where supported by the dataset. Candidate key and business rule validation were performed before implementing constraints, resulting in the identification of several source data quality issues.
-
-Where referential integrity could not be safely enforced (for example, the Product Category Translation lookup table), the original dataset was intentionally preserved and the design decision was documented rather than modifying the source data.
-
-The resulting database accurately represents the structure and quality of the original Olist dataset and provides a reliable foundation for exploratory data analysis and business reporting in the subsequent project phases.
+Separating validation from implementation allows the database design to be independently verified throughout the project lifecycle.
 
 ---
 
-## Next Phase Activity
+# Project Deliverables
 
-Continue importing and validating the remaining datasets before proceeding to exploratory data analysis.
+Phase 02 produced the following deliverables.
+
+- PostgreSQL relational database
+- Dedicated PostgreSQL schema
+- Imported Olist datasets
+- Primary and foreign key implementation scripts
+- SQL validation scripts
+- Validation documentation
+
+---
+
+# Supporting Documentation
+
+| Document | Description |
+|----------|-------------|
+| `sql/validation.sql` | SQL validation queries |
+| `sql/database_constraints.sql` | Database constraint implementation |
+| `validation/validation_notes.md` | Validation observations and design decisions |
+
+> Additional documentation including the Entity Relationship Diagram (ERD), Candidate Key Analysis, Data Quality Findings, Business Discovery, and Data Dictionary will be added as Phase 02 enhancement artifacts.
+
+---
+
+# Lessons Learned
+
+Phase 02 reinforced several important database design principles.
+
+- Database constraints should be implemented only after validating imported data.
+- Candidate key analysis is essential before selecting primary keys.
+- Business rules should be validated using actual data rather than assumptions.
+- Source data quality issues should be documented rather than hidden.
+- Referential integrity should only be enforced when supported by the dataset.
+
+These principles resulted in a database design that accurately reflects both the structure and quality of the original Olist dataset.
+
+---
+
+# Outcome
+
+Phase 02 successfully transformed the raw Olist CSV datasets into a structured PostgreSQL database suitable for business analysis.
+
+Rather than assuming relationships, every primary key and foreign key was validated using imported data before implementation. Where the source data did not support a database constraint, the issue was investigated, documented, and preserved instead of modifying the original dataset.
+
+The completed database provides a reliable operational foundation for exploratory data analysis, business intelligence, and dashboard development in the subsequent phases of this project.
+
+---
+
+# Next Phase
+
+## Phase 03 - Exploratory Data Analysis
+
+The next phase will focus on:
+
+- Exploring the imported datasets using SQL
+- Profiling data quality
+- Answering business questions
+- Generating business insights
+- Preparing analytical datasets for reporting and dashboard development
