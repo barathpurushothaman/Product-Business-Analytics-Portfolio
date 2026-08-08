@@ -74,6 +74,12 @@ All SQL scripts use schema-qualified table names (for example, `olist.customers`
 
 ---
 
+## Entity Relationship Diagram
+
+![Olist E-Commerce Database Entity Relationship Diagram](diagrams/er_diagram.png)
+
+---
+
 # Key Design Decisions
 
 One of the primary objectives of this phase was to validate the imported data before implementing database constraints. Rather than assuming relationships, every primary key and foreign key was verified against the source dataset.
