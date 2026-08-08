@@ -204,6 +204,9 @@ Phase 02 produced the following deliverables.
 | `validation/validation_notes.md` | Validation observations and design decisions |
 
 > Additional documentation including the Entity Relationship Diagram (ERD), Candidate Key Analysis, Data Quality Findings, Business Discovery, and Data Dictionary will be added as Phase 02 enhancement artifacts.
+> Candidate key analysis is documented in:
+
+`validation/candidate_key_analysis.md`
 
 ---
 
